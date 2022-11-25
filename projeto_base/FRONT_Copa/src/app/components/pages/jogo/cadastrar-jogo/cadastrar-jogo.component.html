@@ -4,10 +4,17 @@
   </mat-card-header>
   <mat-card-content>
     <mat-form-field id="selecoes" class="input">
-      <mat-label for="selSelecoes">Cadastrar Jogos</mat-label>
-      <mat-select [(ngModel)]="selecaoId">
+      <mat-label for="selSelecoes"> Seleção A</mat-label>
+      <mat-select [(ngModel)]="AselecaoId">
         <mat-option *ngFor="let selecao of selecoes" value="{{ selecao.selecaoId }}">
-          {{ selecao.selecaoId }} - {{ selecao.nome }}
+          {{ selecao.Id }} - {{ selecao.nome }}
+        </mat-option>
+      </mat-select>
+
+      <mat-label for="selSelecoes">Seleção B</mat-label>
+      <mat-select [(ngModel)]="BselecaoId">
+        <mat-option *ngFor="let selecao of selecoes" value="{{ selecao.selecaoId }}">
+          {{ selecao.Id }} - {{ selecao.nome }}
         </mat-option>
       </mat-select>
     </mat-form-field>

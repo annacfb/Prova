@@ -9,8 +9,10 @@
       <th>Seleção B</th>
     </tr>
     <tr *ngFor="let Jogo of Jogos">
-      <td>{{ Jogo.id }}</td>
-      <td>{{ Jogo.selecao?.nome }}</td>
+      <td>{{ Jogo.placarA }}</td>
+      <td>{{ Jogo.selecaoA?.nome }}</td>
+      <td>{{ Jogo.placarB }}</td>
+      <td>{{ Jogo.selecaoB?.nome }}</td>
     </tr>
     <td>
       <a routerLink="/pages/palpitar/palpitar/{{ selecao.selecaoId }}"> palpitar </a>

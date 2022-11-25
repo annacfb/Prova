@@ -12,12 +12,12 @@ import { Selecao } from "src/app/models/selecao.model";
 })
 export class CadastrarJogoComponent implements OnInit {
 
-  selecaoA!: string;
-  selecaoB!: string;
+  selecaoA!: Selecao;
+  selecaoB!: Selecao;
   selecaoId!: number;
   selecoes!: Selecao[];
-  data!: number;
-  nome!: string;
+  placarA!: number;
+  plcarB!: number;
   constructor(private http: HttpClient, private router: Router, private _snackBar: MatSnackBar) {}
 
   ngOnInit(): void {
@@ -29,12 +29,13 @@ export class CadastrarJogoComponent implements OnInit {
   }
 
   cadastrar(): void {
-    console.log(this.selecaoId);
-    let dataConvertida = new Date(this.data);
-
     let jogo: Jogo = {
-      id: this.selecaoId,
+      selecaoA: this.selecaoA,
+      selecaoB: this.selecaoB,
+      placarA: 0,
+      placarB: 0
     };
+    console.log(jogo);
 
     this.http.post<Jogo>("https://localhost:5001/api/jogo/cadastrar", jogo).subscribe({
       next:(jogo) => {
